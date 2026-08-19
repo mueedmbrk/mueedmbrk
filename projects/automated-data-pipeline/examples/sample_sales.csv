@@ -1,0 +1,12 @@
+Order ID,Customer Name,Total Sales (USD),Order Date,Region,Channel
+1001,Alice Munro,"$1,200.50",2026-01-15,North,Online
+1002,Bilal Ahmed,"$2,300.00",2026-01-16,South,Retail
+1003,Carol Danvers,$850.25,2026-01-17,North,Online
+1004,Danish Iqbal,"$4,100.00",2026-01-18,East,Partner
+1005,Eva Klein,$675.00,2026-01-19,West,Online
+1006,Farhan Malik,"$3,450.75",2026-01-20,South,Retail
+1007,Grace Hopper,"$1,890.00",2026-01-21,North,Partner
+1008,Hina Raza,$920.40,2026-01-22,East,Online
+1008,Hina Raza,$920.40,2026-01-22,East,Online
+1009,Imran Shah,"$5,600.00",2026-01-23,West,Partner
+1010,Julia Chen,"$2,150.30",2026-01-24,North,Online
