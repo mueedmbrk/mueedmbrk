@@ -33,6 +33,8 @@ an MIT licence and a full README.
 Each folder is a self-contained repository. `create-repos.sh` publishes all seven and
 works with either credential type — whichever you already have:
 
+**macOS / Linux / Git Bash** — `create-repos.sh`
+
 ```bash
 # Option A — GitHub CLI
 gh auth login
@@ -41,6 +43,19 @@ gh auth login
 # Option B — personal access token (nothing to install)
 export GITHUB_TOKEN=ghp_your_token_here    # needs the `repo` scope
 ./create-repos.sh
+```
+
+**Windows PowerShell** — `create-repos.ps1`
+
+```powershell
+$env:GITHUB_TOKEN = "ghp_your_token_here"
+.\create-repos.ps1
+```
+
+If PowerShell refuses to run the script, allow it for that session first:
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
 Create a token at **https://github.com/settings/tokens** if you go the second route.
