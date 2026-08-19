@@ -6,6 +6,10 @@
 </p>
 
 <p align="center">
+  <b><a href="https://mueedmbrk.github.io/mueedmbrk/">View the portfolio →</a></b>
+</p>
+
+<p align="center">
   <a href="https://www.linkedin.com/in/mueed-mubarak/">LinkedIn</a> ·
   <a href="mailto:mueedmbrk@gmail.com">Email</a> ·
   <a href="assets/docs/Mueed-Mubarak-CV.pdf">Download CV</a>
@@ -46,6 +50,8 @@ python3 -m http.server 8000
 # then open http://localhost:8000
 ```
 
-### Publishing with GitHub Pages
+### Deployment
 
-Settings → Pages → *Deploy from a branch*, then pick the branch and the `/ (root)` folder.
+Live at **https://mueedmbrk.github.io/mueedmbrk/**, served by GitHub Pages from the
+`gh-pages` branch. `.github/workflows/publish.yml` rebuilds that branch on every push
+to the source branch, so edits go live on their own — no manual step.

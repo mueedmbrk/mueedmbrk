@@ -1,0 +1,42 @@
+name: Publish portfolio
+
+# Pages serves this repo from the gh-pages branch, so every push to the
+# source branch rebuilds that branch from the site files.
+on:
+  push:
+    branches: [claude/portfolio-redesign-professional-sy4brg]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          mkdir -p _site
+          cp -r index.html favicon.svg .nojekyll assets _site/
+          echo "--- files to publish ---"
+          find _site -type f | sort
+
+      - name: Push to gh-pages
+        working-directory: _site
+        run: |
+          git init -q -b gh-pages
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -q -m "Publish portfolio site from ${GITHUB_SHA:0:7}"
+          git push -q --force \
+            "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
