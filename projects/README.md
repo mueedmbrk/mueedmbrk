@@ -30,16 +30,29 @@ an MIT licence and a full README.
 
 ## 🚀 Publishing to GitHub
 
-Each folder is a self-contained repository. To create all seven on GitHub and push them:
+Each folder is a self-contained repository. `create-repos.sh` publishes all seven and
+works with either credential type — whichever you already have:
 
 ```bash
-gh auth login          # if not already authenticated
+# Option A — GitHub CLI
+gh auth login
+./create-repos.sh
+
+# Option B — personal access token (nothing to install)
+export GITHUB_TOKEN=ghp_your_token_here    # needs the `repo` scope
 ./create-repos.sh
 ```
 
+Create a token at **https://github.com/settings/tokens** if you go the second route.
+
 The script creates each repo as **public**, sets its description and topics, then
-commits and pushes. It is safe to re-run — existing repos are skipped rather than
-overwritten. Override the account with `OWNER=someone-else ./create-repos.sh`.
+commits and pushes with retry/backoff. It is safe to re-run — existing repos are
+skipped rather than overwritten. Override the account with
+`OWNER=someone-else ./create-repos.sh`.
+
+⚠️ In token mode the token is written into each repo's git remote URL so the push can
+authenticate. The script prints a one-liner at the end to strip it back out — run that
+before sharing the folders.
 
 To publish just one:
 
