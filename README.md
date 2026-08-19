@@ -6,7 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/mueedmbrk/">LinkedIn</a> ·
+  <a href="https://www.linkedin.com/in/mueed-mubarak/">LinkedIn</a> ·
   <a href="mailto:mueedmbrk@gmail.com">Email</a> ·
   <a href="assets/docs/Mueed-Mubarak-CV.pdf">Download CV</a>
 </p>
